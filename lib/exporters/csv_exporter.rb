@@ -34,7 +34,7 @@ module DataShift
     #
     def export(records, options = {})
        
-      raise ArgumentError.new('Please supply array of records to export') unless records.is_a? Array
+      raise ArgumentError.new('Please supply array of records to export') unless records.respond_to? :each
       
       first = records[0]
      
